@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAZMuYCiiIzw9KqmZH0_5WmNIRccf9m6BY",
+    apiKey: import.meta.env.VITE_KEY,
     authDomain: "talkify-c41b9.firebaseapp.com",
     projectId: "talkify-c41b9",
     storageBucket: "talkify-c41b9.appspot.com",
