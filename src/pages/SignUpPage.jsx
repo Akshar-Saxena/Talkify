@@ -24,7 +24,7 @@ export default function SignUpPage() {
         });
         document.cookie = `token="${token}"`;
         setLoading(false);
-        navigate("/");
+        navigate("/policy");
     };
 
     const verifyPhone = async () => {

@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import VerifyPage from "./pages/VerifyPage";
 import WelcomePage from "./pages/WelcomePage";
+import TermsPage from "./pages/TermsPage";
 
 export default function App() {
     return (
@@ -13,6 +14,7 @@ export default function App() {
                 <Route exact path="/signup" element={<SignUpPage />} />
                 <Route exact path="/verify" element={<VerifyPage />} />
                 <Route exact path="/welcome" element={<WelcomePage />} />
+                <Route exact path="/policy" element={<TermsPage />} />
             </Routes>
         </Router>
     );

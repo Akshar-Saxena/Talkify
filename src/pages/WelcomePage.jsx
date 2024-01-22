@@ -158,7 +158,8 @@ export default function WelcomePage() {
                                         <div
                                             key={id}
                                             className={`flex w-[97%] m-auto justify-${
-                                                element.sender == userToken
+                                                element.receiver ==
+                                                document.cookie.slice(6)
                                                     ? "start"
                                                     : "end"
                                             }`}
