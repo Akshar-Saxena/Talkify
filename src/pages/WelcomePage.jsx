@@ -157,12 +157,14 @@ export default function WelcomePage() {
                                     .map((element, id) => (
                                         <div
                                             key={id}
-                                            className={`flex w-[97%] m-auto justify-${
-                                                element.receiver ==
-                                                document.cookie.slice(6)
-                                                    ? "start"
-                                                    : "end"
-                                            }`}
+                                            className={`flex w-[97%] m-auto`}
+                                            style={{
+                                                justifyContent:
+                                                    element.receiver ==
+                                                    document.cookie.slice(6)
+                                                        ? "start"
+                                                        : "end",
+                                            }}
                                         >
                                             <h1
                                                 className={`my-1 w-fit max-w-[270px] text-white px-5 py-3 rounded-xl bg-gradient-to-b 
