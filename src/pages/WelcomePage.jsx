@@ -49,7 +49,11 @@ export default function WelcomePage() {
     const loadChats = async (user) => {
         setDisable(true);
         setChat([]);
+        // console.log(chat);
+        // const temp = chat;
+        // let temp = 0;
         const chats = await getDocs(collection(db, "chats"));
+        // temp = chats > temp ? chats.length : temp;
         chats.forEach((element) => {
             if (
                 (element.data().sender == document.cookie.slice(6) ||
@@ -57,11 +61,19 @@ export default function WelcomePage() {
                 (element.data().sender == user ||
                     element.data().receiver == user)
             ) {
-                console.log("Found");
+                // console.log("Found");
+                // console.log(element.data().time);
+                // if (!chat.some((obj) => obj.time == element.data().time)) {
                 setChat((prev) => [...prev, element.data()]);
+                // console.log("New element");
+                // }
             }
         });
     };
+
+    // useEffect(() => {
+    //     setChat([]);
+    // }, [userToken]);
 
     const sendMessage = async () => {
         if (msg != "") {
@@ -103,6 +115,7 @@ export default function WelcomePage() {
                                             onClick={(e) => {
                                                 setUser(e.target.innerHTML);
                                                 setUserToken(element.id);
+                                                // setChat([]);
                                                 loadChats(element.id);
                                                 setSideOpen(false);
                                             }}
@@ -125,6 +138,7 @@ export default function WelcomePage() {
                                     className="rounded-lg cursor-pointer my-1 px-4 py-3 bg-white"
                                     key={id}
                                     onClick={(e) => {
+                                        // setChat([]);
                                         setUser(e.target.innerHTML);
                                         setUserToken(element.id);
                                         loadChats(element.id);
